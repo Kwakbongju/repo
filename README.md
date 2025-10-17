@@ -283,8 +283,22 @@ Phi = inv(s*eye(3)-A);
 Phi_t = ilaplace(Phi)
 ```
 
+<img src="https://i.ifh.cc/0TPDZ1.png">
 
 
+# P3.17
+```
+A = [1 1 -1; 4 3 0; -2 1 10];
+B = [0; 0; 4];
+C = [1 0 0];
+D = 0;
+syms s
+Phi = inv(s*eye(3)-A);
+G = C * Phi * B + D;
+pretty(G)
+```
+
+<img src="https://i.ifh.cc/0TPDZ1.png](https://i.ifh.cc/X9G1zF.png">
 
 
 
