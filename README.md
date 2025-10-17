@@ -135,7 +135,7 @@ x_3(t)
 \right)
 =\left(
 \begin{array}{c}
-\dot{z}(t)\\
+\{z}(t)\\
 \\dot{x_{1}}(t)\\
 \\dot{x_{2}}(t)
 \end{array}
@@ -198,6 +198,90 @@ y(t)=
 2 & 1 & 0
 \end{bmatrix}x(t)
 $$
+
+# P3.12
+(a)
+
+$$
+x(t)=\left(
+\begin{array}{c}
+x_1(t)\\
+x_2(t)\\
+x_3(t)
+\end{array}
+\right)
+=\left(
+\begin{array}{c}
+\{z}(t)\\
+\\dot{x_{1}}(t)\\
+\\dot{x_{2}}(t)
+\end{array}
+\right)
+=\left(
+\begin{array}{c}
+z(t)\\
+\dot{z}(t)\\
+\ddot{z}(t)
+\end{array}
+\right)
+$$
+
+$$
+Y(s)=(8s+40)Z(s)
+$$
+
+$$
+y(t)=8x_2(t)+40x_1(t)
+$$
+
+$$
+R(s)=(s^3+12s^2+44s+48)Z(s)
+$$
+
+$$
+r(t)=\dot{x}_3(t)+12x_3(t)+44x_2(t)+48x_1(t)
+$$
+
+$$
+\dddot{z}(t)=-15\ddot{z}(t)-44\dot{z}(t)-48z(t)+r(t)
+$$
+
+$$
+\dot{x}_3(t)=-15x_3(t)-44x_2(t)-48x_1(t)+r(t)
+$$
+
+$$
+\dot{x}(t)=
+\begin{bmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+-48 & -44 & -12
+\end{bmatrix}x(t)
++
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}r(t)
+$$
+
+$$
+y(t)=
+\begin{bmatrix}
+40 & 8 & 0
+\end{bmatrix}x(t)
+$$
+
+(b)
+```
+A = [0 1 0; 0 0 1; -48 -44 -12];
+B = [0; 0; 1];
+C = [40 8];
+D = 0;
+syms s
+Phi = inv(s*eye(3)-A);
+Phi_t = ilaplace(Phi)
+```
 
 
 
