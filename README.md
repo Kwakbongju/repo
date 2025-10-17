@@ -126,13 +126,85 @@ $$
 (b)
 
 $$
-r(t)=\begin{pmatrix}
-x_1(t)\\x_2(t)\\x_3(t)
-\end{pmatrix}
-=\begin{pmatrix}
-\dot{z}(t)\\\ddot{z}(t)\\\dddot{z}(t)
-\end{pmatrix}
+x(t)=\left(
+\begin{array}{c}
+x_1(t)\\
+x_2(t)\\
+x_3(t)
+\end{array}
+\right)
+=\left(
+\begin{array}{c}
+\dot{z}(t)\\
+\\dot{x_{1}}(t)\\
+\\dot{x_{2}}(t)
+\end{array}
+\right)
+=\left(
+\begin{array}{c}
+z(t)\\
+\dot{z}(t)\\
+\ddot{z}(t)
+\end{array}
+\right)
 $$
+
+$$
+Y(s)=(s+2)Z(s)
+$$
+
+$$
+y(t)=x_2(t)+2x_1(t)
+$$
+
+$$
+R(s)=(s^3+5s^2-23s+2)Z(s)
+$$
+
+$$
+r(t)=\dot{x}_3(t)+5x_3(t)-23x_2(t)+2x_1(t)
+$$
+
+$$
+\dot{x}_3(t)=-5x_3(t)+23x_2(t)-2x_1(t)+r(t)
+$$
+
+$$
+\dot{x}_2(t)=x_3(t),\quad \dot{x}_1(t)=x_2(t)
+$$
+
+$$
+T(s)\text{에서 }a_2=5,\;a_1=-23,\;a_0=2,\quad b_0=0,\;b_1=1,\;b_2=2
+$$
+
+$$
+\dot{x}(t)=
+\begin{bmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+-2 & 23 & -5
+\end{bmatrix}x(t)
++
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}r(t)
+$$
+
+$$
+y(t)=
+\begin{bmatrix}
+2 & 1 & 0
+\end{bmatrix}x(t)
+$$
+
+
+
+
+
+
+
 
 
 
